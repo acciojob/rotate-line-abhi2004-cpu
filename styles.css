@@ -1,20 +1,23 @@
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    overflow: hidden;
+/* Reset body so centering is predictable */
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #fff;
 }
 
+/* Line styles */
 #line {
-    width: 200px;
-    height: 2px;
-    background: #000;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform-origin: center center;
-}
+  width: 200px;         /* required */
+  height: 2px;          /* required */
+  background: #000;     /* black */
+  position: absolute;   /* required */
+  top: 50%;             /* required */
+  left: 50%;            /* required */
 
+  /* Center the element without using transform so JS can set transform = rotate(...) only */
+  margin-left: -100px;  /* half of width (200/2) */
+  margin-top: -1px;     /* half of height (2/2) */
+
+  transform-origin: center center;
+  transform: rotate(0deg); /* initial rotation */
+}
